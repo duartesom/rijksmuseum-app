@@ -1,0 +1,109 @@
+[versions]
+agp = "8.3.2"
+kotlin = "1.9.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.9.3"
+composeBom = "2024.10.01"
+
+navigation = "2.8.3"
+lifecycle = "2.8.7"
+lifecycleExtension = "2.2.0"
+navigationCompose = "2.8.3"
+hiltNavigationCompose = "1.2.0"
+coil-core = "2.6.0"
+coil-svg = "2.6.0"
+retrofit-core = "2.11.0"
+okHttp-core = "4.12.0"
+okHttp-logging = "4.12.0"
+moshi = "1.15.1"
+dagger = "2.51.1"
+google-fonts = "1.7.5"
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui", version= "1.7.5" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycle" }
+lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "lifecycleExtension" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+# Navigation
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+# Coil
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil-core" }
+coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil-svg" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-core" }
+
+haze = { group = "dev.chrisbanes.haze", name = "haze", version = "1.0.0" }
+haze-materials = { group = "dev.chrisbanes.haze", name = "haze-materials", version = "1.0.0" }
+
+# Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit-core" }
+retrofit-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit-core" }
+retrofit-scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit-core" }
+okHttp-tls = { group = "com.squareup.okhttp3", name = "okhttp-tls", version.ref = "okHttp-core" }
+moshi-adapters = { group = "com.squareup.moshi", name = "moshi-adapters", version.ref = "moshi" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp-core" }
+okHttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp-logging" }
+
+# Hilt
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
+dagger-hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
+
+# Mockk
+mockk-android = { group = "io.mockk", name = "mockk-android", version = "1.13.13" }
+
+compose-ui-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "google-fonts" }
+
+
+# For instrumented tests.
+# androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+# ...with Kotlin.
+# kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.51.1")
+
+
+[bundles]
+
+ui = ["compose-ui-google-fonts", "haze", "haze-materials"]
+lifecycle = [
+    "lifecycle-viewmodel-ktx", "lifecycle-livedata-ktx", "lifecycle-common-java8",
+    "lifecycle-extensions", "lifecycle-runtime-ktx"
+]
+remoteImages = ["coil", "coil-svg", "coil-compose"]
+network = [
+    "okHttp", "okHttp-logging", "retrofit", "retrofit-moshi", "retrofit-scalars", "okHttp-tls",
+    "moshi-adapters"
+]
+navigation = ["navigation-ui-ktx", "androidx-navigation-compose", "androidx-hilt-navigation-compose"]
+
+instrumentedTests = ["dagger-hilt-android-testing", "mockk-android"]
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidHilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
+
